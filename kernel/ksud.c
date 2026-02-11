@@ -518,9 +518,9 @@ bool is_init_rc(struct file *fp)
 
 void ksu_handle_sys_read(unsigned int fd)
 {
-	struct file *file = fget(fd);
 #if defined(CONFIG_KSU_SYSCALL_HOOK) || defined(CONFIG_KSU_MANUAL_HOOK) ||     \
 	defined(CONFIG_KSU_SUSFS)
+	struct file *file = fget(fd);
 	if (!file) {
 		return;
 	}
